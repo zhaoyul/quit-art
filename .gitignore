@@ -1,0 +1,23 @@
+# Clojure
+.cpcache/
+.nrepl-port
+.calva/
+.clj-kondo/
+.lsp/
+target/
+.rebel_readline_history
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temp files
+/tmp/
