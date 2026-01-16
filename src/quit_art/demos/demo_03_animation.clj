@@ -3,29 +3,32 @@
   (:require [quil.core :as q]
             [quil.middleware]))
 
-(defn setup []
+(defn setup 
   "Initialize state with rotation angle"
+  []
   (q/smooth)
-  (q/frame-rate 30)
+  (q/frame-rate 60)
   {:angle 0})
 
-(defn update-state [state]
+(defn update-state
   "Update the rotation angle"
+  [state]
   (update state :angle #(+ % 0.02)))
 
-(defn draw [state]
+(defn draw 
   "Draw rotating squares"
+  [state]
   (q/background 240)
   (q/translate (/ (q/width) 2) (/ (q/height) 2))
-  
+
   ;; Draw multiple rotating squares
   (doseq [i (range 5)]
     (q/push-matrix)
     (q/rotate (+ (:angle state) (* i 0.5)))
     (q/stroke 50 100 200 150)
-    (q/stroke-weight 2)
+    (q/stroke-weight 4)
     (q/no-fill)
-    (let [size (+ 50 (* i 30))]
+    (let [size (+ 50 (* i (/ (q/height) 7)))]
       (q/rect (- (/ size 2)) (- (/ size 2)) size size))
     (q/pop-matrix)))
 
@@ -34,7 +37,7 @@
   :setup setup
   :update update-state
   :draw draw
-  :size [500 500]
+  :size :fullscreen
   :middleware [quil.middleware/fun-mode])
 
 (defn -main [& args]

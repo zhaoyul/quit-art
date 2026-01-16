@@ -3,20 +3,22 @@
   (:require [quil.core :as q]
             [quil.middleware]))
 
-(defn setup []
+(defn setup
   "Initialize particles with random positions"
+  []
   (q/smooth)
   (q/background 250)
   (q/frame-rate 60)
   {:particles (vec (repeatedly 500
-                                (fn []
-                                  {:x (q/random (q/width))
-                                   :y (q/random (q/height))
-                                   :px (q/random (q/width))
-                                   :py (q/random (q/height))})))})
+                               (fn []
+                                 {:x (q/random (q/width))
+                                  :y (q/random (q/height))
+                                  :px (q/random (q/width))
+                                  :py (q/random (q/height))})))})
 
-(defn update-state [state]
+(defn update-state
   "Update particle positions based on Perlin noise flow field"
+  [state]
   (update state :particles
           (fn [particles]
             (mapv (fn [p]
@@ -29,11 +31,12 @@
                        :py (:y p)}))
                   particles))))
 
-(defn draw [state]
+(defn draw
   "Draw flowing lines connecting particle positions"
+  [state]
   (q/fill 250 5)
   (q/rect 0 0 (q/width) (q/height))
-  
+
   (q/stroke-weight 1)
   (doseq [p (:particles state)]
     (let [noise-val (q/noise (* (:x p) 0.01) (* (:y p) 0.01))
@@ -46,7 +49,7 @@
   :setup setup
   :update update-state
   :draw draw
-  :size [800 600]
+  :size :fullscreen
   :color-mode :hsb
   :middleware [quil.middleware/fun-mode])
 
