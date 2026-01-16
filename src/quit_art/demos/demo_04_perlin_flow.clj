@@ -1,6 +1,7 @@
 (ns quit-art.demos.demo-04-perlin-flow
   "Demo 04: Perlin Noise Flow Field - Organic flowing lines using Perlin noise"
-  (:require [quil.core :as q]))
+  (:require [quil.core :as q]
+            [quil.middleware]))
 
 (defn setup []
   "Initialize particles with random positions"

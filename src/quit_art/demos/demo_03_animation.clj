@@ -1,6 +1,7 @@
 (ns quit-art.demos.demo-03-animation
   "Demo 03: Animation - Simple animated artwork with rotation"
-  (:require [quil.core :as q]))
+  (:require [quil.core :as q]
+            [quil.middleware]))
 
 (defn setup []
   "Initialize state with rotation angle"
