@@ -14,23 +14,23 @@
 
 (defn try-add-circle [circles attempts]
   "Try to add a new circle to the collection"
-  (loop [i 0]
-    (if (>= i attempts)
-      circles ; Failed to add after attempts
-      (let [x (q/random (q/width))
-            y (q/random (q/height))
-            r 3 ; Start with small radius
-            max-r 60]
-        (if (circle-intersects? x y r circles)
-          (recur (inc i))
-          ;; Found a spot, now grow the circle
-          (let [grown-circle (loop [current-r r]
-                              (if (>= current-r max-r)
-                                {:x x :y y :r current-r}
-                                (if (circle-intersects? x y (inc current-r) circles)
+  (let [min-r 3    ; Minimum starting radius
+        max-r 60]  ; Maximum circle radius
+    (loop [i 0]
+      (if (>= i attempts)
+        circles ; Failed to add after attempts
+        (let [x (q/random (q/width))
+              y (q/random (q/height))]
+          (if (circle-intersects? x y min-r circles)
+            (recur (inc i))
+            ;; Found a spot, now grow the circle
+            (let [grown-circle (loop [current-r min-r]
+                                (if (>= current-r max-r)
                                   {:x x :y y :r current-r}
-                                  (recur (inc current-r)))))]
-            (conj circles grown-circle)))))))
+                                  (if (circle-intersects? x y (inc current-r) circles)
+                                    {:x x :y y :r current-r}
+                                    (recur (inc current-r)))))]
+              (conj circles grown-circle))))))))
 
 (defn setup []
   "Setup circle packing algorithm"

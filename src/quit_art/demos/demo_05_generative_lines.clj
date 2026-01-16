@@ -18,8 +18,8 @@
     (let [t (/ i segments)
           x (q/lerp x1 x2 t)
           y (q/lerp y1 y2 t)
-          noise-x (* (q/noise (* x 0.01) (* y 0.01) 100) 40 (- 0.5))
-          noise-y (* (q/noise (* x 0.01) (* y 0.01) 200) 40 (- 0.5))]
+          noise-x (* (- (q/noise (* x 0.01) (* y 0.01) 100) 0.5) 40)
+          noise-y (* (- (q/noise (* x 0.01) (* y 0.01) 200) 0.5) 40)]
       (q/curve-vertex (+ x noise-x) (+ y noise-y))))
   (q/vertex x2 y2)
   (q/end-shape))
