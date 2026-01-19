@@ -2,8 +2,9 @@
   "Demo 08: Circle Packing - Organic space filling with non-overlapping circles"
   (:require [quil.core :as q]))
 
-(defn circle-intersects? [x y r circles]
+(defn circle-intersects?
   "Check if a circle at (x, y) with radius r intersects any existing circles"
+  [x y r circles]
   (some (fn [c]
           (let [dx (- x (:x c))
                 dy (- y (:y c))
@@ -12,8 +13,9 @@
             (< dist min-dist)))
         circles))
 
-(defn try-add-circle [circles attempts]
+(defn try-add-circle
   "Try to add a new circle to the collection"
+  [circles attempts]
   (let [min-r 3    ; Minimum starting radius
         max-r 60]  ; Maximum circle radius
     (loop [i 0]
@@ -25,15 +27,16 @@
             (recur (inc i))
             ;; Found a spot, now grow the circle
             (let [grown-circle (loop [current-r min-r]
-                                (if (>= current-r max-r)
-                                  {:x x :y y :r current-r}
-                                  (if (circle-intersects? x y (inc current-r) circles)
-                                    {:x x :y y :r current-r}
-                                    (recur (inc current-r)))))]
+                                 (if (>= current-r max-r)
+                                   {:x x :y y :r current-r}
+                                   (if (circle-intersects? x y (inc current-r) circles)
+                                     {:x x :y y :r current-r}
+                                     (recur (inc current-r)))))]
               (conj circles grown-circle))))))))
 
-(defn setup []
+(defn setup
   "Setup circle packing algorithm"
+  []
   (q/smooth)
   (q/background 250)
   (q/no-fill)
@@ -42,18 +45,20 @@
    :generation 0
    :max-circles 300})
 
-(defn update-state [state]
+(defn update-state 
   "Add circles gradually"
+  [state]
   (if (< (count (:circles state)) (:max-circles state))
     (-> state
         (update :circles try-add-circle 50)
         (update :generation inc))
     state))
 
-(defn draw [state]
+(defn draw 
   "Draw all circles with colors based on size"
+  [state]
   (q/background 250)
-  
+
   (doseq [c (:circles state)]
     (let [hue (* (/ (:r c) 60) 60)
           saturation 150
@@ -61,7 +66,7 @@
       (q/stroke hue saturation brightness)
       (q/stroke-weight (+ 1 (* (/ (:r c) 60) 2)))
       (q/ellipse (:x c) (:y c) (* 2 (:r c)) (* 2 (:r c)))))
-  
+
   ;; Show progress
   (q/fill 0)
   (q/text-size 12)
@@ -73,7 +78,7 @@
   :setup setup
   :update update-state
   :draw draw
-  :size [800 800]
+  :size :fullscreen
   :color-mode :hsb
   :middleware [quil.middleware/fun-mode])
 

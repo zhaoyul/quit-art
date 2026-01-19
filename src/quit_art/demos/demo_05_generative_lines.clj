@@ -2,16 +2,18 @@
   "Demo 05: Generative Lines - Tyler Hobbs inspired line art with subtle variations"
   (:require [quil.core :as q]))
 
-(defn setup []
+(defn setup
   "Setup with light background"
+  []
   (q/smooth)
   (q/background 245)
   (q/stroke 20)
   (q/stroke-weight 2)
   (q/no-loop))
 
-(defn draw-curved-line [x1 y1 x2 y2 segments]
+(defn draw-curved-line
   "Draw a curved line with multiple segments and noise-based displacement"
+  [x1 y1 x2 y2 segments]
   (q/begin-shape)
   (q/vertex x1 y1)
   (doseq [i (range 1 segments)]
@@ -24,12 +26,13 @@
   (q/vertex x2 y2)
   (q/end-shape))
 
-(defn draw []
+(defn draw
   "Draw generative line art"
+  []
   (let [num-lines 60
         margin 50
         spacing (/ (- (q/width) (* 2 margin)) (dec num-lines))]
-    
+
     ;; Draw vertical flowing lines
     (doseq [i (range num-lines)]
       (let [x (+ margin (* i spacing))
@@ -53,7 +56,7 @@
   :title "Demo 05: Generative Lines"
   :setup setup
   :draw draw
-  :size [800 800])
+  :size :fullscreen)
 
 (defn -main [& args]
   (println "Demo 05: Generative Lines - Run from REPL with (generative-lines)"))

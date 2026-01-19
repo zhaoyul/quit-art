@@ -22,7 +22,7 @@
             (- center-x cross-size) (+ center-y cross-size))
 
     ;; Draw a filled circle in the center
-    (q/fill 255 150)
+    (q/fill 255 100)
     (q/ellipse center-x center-y 50 50)))
 
 (q/defsketch basic-shapes
