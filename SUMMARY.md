@@ -2,9 +2,9 @@
 
 ## 项目概述 / Project Overview
 
-这是一个完整的 Clojure/Quil 生成艺术项目，从基础到高级循序渐进，共包含 8 个精心设计的演示。项目受 Tyler Hobbs 等生成艺术家启发，展示了如何使用代码创作视觉艺术。
+这是一个完整的 Clojure/Quil 生成艺术项目，从基础到高级循序渐进，包含 8 个核心演示与 31 个 Quil Generative Art 示例。项目受 Tyler Hobbs 等生成艺术家启发，展示了如何使用代码创作视觉艺术。
 
-This is a complete Clojure/Quil generative art project with 8 progressively complex demos, inspired by Tyler Hobbs and other generative artists.
+This is a complete Clojure/Quil generative art project with 8 core demos plus 31 Quil Generative Art examples, inspired by Tyler Hobbs and other generative artists.
 
 ## 技术栈 / Tech Stack
 
@@ -56,6 +56,8 @@ Comprehensive bilingual documentation (Chinese/English).
 | 07 | Flow Fields | ⭐⭐⭐⭐⭐ | 动画 | 多层噪声、复杂流场 |
 | 08 | Circle Packing | ⭐⭐⭐⭐⭐ | 动画 | 碰撞检测、增长算法 |
 
+另外还包含 31 个 Quil Generative Art 示例，位于 `src/quit_art/demos/gen_art/`。
+
 ## 文件结构 / File Structure
 
 ```
@@ -76,7 +78,11 @@ quit-art/
             ├── demo_05_generative_lines.clj
             ├── demo_06_subdivisions.clj
             ├── demo_07_flow_fields.clj
-            └── demo_08_circle_packing.clj
+            ├── demo_08_circle_packing.clj
+            └── gen_art/           # 31 个 Quil 示例
+                ├── 01_cross_with_circle.clj
+                ├── 02_growing_circle.clj
+                └── ...
 ```
 
 ## 使用指南 / Quick Start

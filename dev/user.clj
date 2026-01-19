@@ -21,6 +21,8 @@
   (println "6. (demo06/subdivisions)      - Recursive space subdivisions")
   (println "7. (demo07/flow-fields)       - Advanced multi-layer flow fields")
   (println "8. (demo08/circle-packing)    - Organic circle packing algorithm")
+  (println "\nGen Art examples (31) are under src/quit_art/demos/gen_art")
+  (println "Run one with: clj -M -m quit-art.demos.gen-art.01-cross-with-circle")
   (println "\nTo run a demo, call its function, e.g.: (demo01/basic-shapes)")
   (println "To list demos again: (list-demos)\n"))
 

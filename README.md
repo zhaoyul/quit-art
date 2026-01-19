@@ -41,7 +41,7 @@ clj
 clj
 ```
 
-REPL 启动后会自动加载所有 demos，你可以看到可用的演示列表。运行任意演示:
+REPL 启动后会自动加载 demo-01~08，你可以看到可用的演示列表。运行任意演示:
 
 ```clojure
 ;; 查看所有演示
@@ -133,6 +133,50 @@ clj -M -m quit-art.demos.demo-01-basic-shapes
 | demo-07 | 高级流场可视化 | ⭐⭐⭐⭐⭐ | 多层噪声、复杂系统 |
 | demo-08 | 圆形填充算法 | ⭐⭐⭐⭐⭐ | 空间填充、碰撞检测 |
 
+## 更多例子 / More Examples
+
+以下示例来自 Quil 官方 `quil-examples` 的 Generative Art 章节（Matt Pearson《Generative Art》一书中的示例）。已引入本仓库，位于 `src/quit_art/demos/gen_art/`，可以像其他 demo 一样直接运行。
+
+运行示例（任意替换编号与名称）：
+
+```bash
+clj -M -m quit-art.demos.gen-art.01-cross-with-circle
+```
+
+| # | 示例 | 源码 |
+|---|------|------|
+| 01 | Cross with Circle | [01_cross_with_circle.clj](src/quit_art/demos/gen_art/01_cross_with_circle.clj) |
+| 02 | Growing Circle | [02_growing_circle.clj](src/quit_art/demos/gen_art/02_growing_circle.clj) |
+| 03 | Concentric Circles (Traces) | [03_concentric_circles.clj](src/quit_art/demos/gen_art/03_concentric_circles.clj) |
+| 04 | Fading Horizontal Lines | [04_fading_horizontal_lines.clj](src/quit_art/demos/gen_art/04_fading_horizontal_lines.clj) |
+| 05 | Random Scribble | [05_random_scribble.clj](src/quit_art/demos/gen_art/05_random_scribble.clj) |
+| 06 | Random Walk Scribble | [06_rand_walk_scribble.clj](src/quit_art/demos/gen_art/06_rand_walk_scribble.clj) |
+| 07 | Perlin Noise Scribble | [07_perlin_noise_scribble.clj](src/quit_art/demos/gen_art/07_perlin_noise_scribble.clj) |
+| 08 | Sine Wave | [08_sine_wave.clj](src/quit_art/demos/gen_art/08_sine_wave.clj) |
+| 09 | Sine Wave with Noise | [09_sine_wave_with_noise.clj](src/quit_art/demos/gen_art/09_sine_wave_with_noise.clj) |
+| 10 | Custom Random Function | [10_custom_rand.clj](src/quit_art/demos/gen_art/10_custom_rand.clj) |
+| 11 | Dotted Circle | [11_dotted_circle.clj](src/quit_art/demos/gen_art/11_dotted_circle.clj) |
+| 12 | Spiral | [12_spiral.clj](src/quit_art/demos/gen_art/12_spiral.clj) |
+| 13 | Noisy Spiral | [13_noisy_spiral.clj](src/quit_art/demos/gen_art/13_noisy_spiral.clj) |
+| 14 | 100 Noisy Spirals | [14_hundred_noisy_spirals.clj](src/quit_art/demos/gen_art/14_hundred_noisy_spirals.clj) |
+| 15 | Custom Noise Circle | [15_custom_noise_circle.clj](src/quit_art/demos/gen_art/15_custom_noise_circle.clj) |
+| 16 | Circle from Opposing Lines | [16_circle_from_opposing_lines.clj](src/quit_art/demos/gen_art/16_circle_from_opposing_lines.clj) |
+| 17 | Circle from Fading Opposing Lines | [17_circle_from_fading_opposing_lines.clj](src/quit_art/demos/gen_art/17_circle_from_fading_opposing_lines.clj) |
+| 18 | Warped Circle from Fading Opposing Lines | [18_warped_circle_from_fading_opposing_lines.clj](src/quit_art/demos/gen_art/18_warped_circle_from_fading_opposing_lines.clj) |
+| 19 | Wave Clock | [19_wave_clock.clj](src/quit_art/demos/gen_art/19_wave_clock.clj) |
+| 20 | 2D Noise Grid | [20_noise_grid.clj](src/quit_art/demos/gen_art/20_noise_grid.clj) |
+| 21 | Squared 2D Noise Grid | [21_squared_noise_grid.clj](src/quit_art/demos/gen_art/21_squared_noise_grid.clj) |
+| 22 | Rotating Lines 2D Noise Grid | [22_rotating_lines_noise_grid.clj](src/quit_art/demos/gen_art/22_rotating_lines_noise_grid.clj) |
+| 23 | Fluffy Clouds 2D Noise Grid | [23_fluffy_clouds_noise_grid.clj](src/quit_art/demos/gen_art/23_fluffy_clouds_noise_grid.clj) |
+| 24 | Animated Fluffy Clouds | [24_animated_fluffy_clouds.clj](src/quit_art/demos/gen_art/24_animated_fluffy_clouds.clj) |
+| 25 | Animated Rotated Lines | [25_animated_rotated_lines.clj](src/quit_art/demos/gen_art/25_animated_rotated_lines.clj) |
+| 26 | 3D Sphere | [26_sphere.clj](src/quit_art/demos/gen_art/26_sphere.clj) |
+| 27 | Noise from a 3D Perspective | [27_noise_perspective.clj](src/quit_art/demos/gen_art/27_noise_perspective.clj) |
+| 28 | A Cube of 3D Noise | [28_cloud_cube.clj](src/quit_art/demos/gen_art/28_cloud_cube.clj) |
+| 29 | Spiral Sphere | [29_spiral_sphere.clj](src/quit_art/demos/gen_art/29_spiral_sphere.clj) |
+| 30 | Random Clicked Circles | [30_random_clicked_circles.clj](src/quit_art/demos/gen_art/30_random_clicked_circles.clj) |
+| 31 | OO Circles | [31_oo_circles.clj](src/quit_art/demos/gen_art/31_oo_circles.clj) |
+
 ## 项目结构 / Structure
 
 ```
@@ -152,7 +196,12 @@ quit-art/
             ├── demo_05_generative_lines.clj  # 生成式线条
             ├── demo_06_subdivisions.clj      # 递归细分
             ├── demo_07_flow_fields.clj       # 高级流场
-            └── demo_08_circle_packing.clj    # 圆形填充
+            ├── demo_08_circle_packing.clj    # 圆形填充
+            └── gen_art/                      # Quil 示例（31 个）
+                ├── 01_cross_with_circle.clj
+                ├── 02_growing_circle.clj
+                ├── 03_concentric_circles.clj
+                └── ...
 ```
 
 ## 依赖 / Dependencies
