@@ -180,6 +180,20 @@ clj -M -m quit-art.demos.gen-art.01-cross-with-circle
 | 33 | Peter de Jong Attractor | [33_peter_de_jong.clj](src/quit_art/demos/gen_art/33_peter_de_jong.clj) |
 | 34 | Mandelbrot Set | [34_mandelbrot_set.clj](src/quit_art/demos/gen_art/34_mandelbrot_set.clj) |
 
+### 公式 / Formulas
+
+**Sierpinski 三角形 (Triangle)**
+
+$$
+p_{n+1} = \frac{p_n + v_i}{2}, \quad v_i \in \{v_1, v_2, v_3\}
+$$
+
+**Mandelbrot 集**
+
+$$
+M = \{ c \in \mathbb{C} \mid z_0 = 0,\ z_{n+1} = z_n^2 + c,\ \sup_n |z_n| < \infty \}
+$$
+
 ## 项目结构 / Structure
 
 ```
