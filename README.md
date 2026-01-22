@@ -194,6 +194,13 @@ $$
 M = \{ c \in \mathbb{C} \mid z_0 = 0,\ z_{n+1} = z_n^2 + c,\ \sup_n |z_n| < \infty \}
 $$
 
+**Peter de Jong 吸引子**
+
+$$
+x_{n+1} = \sin(a y_n) - \cos(b x_n), \quad
+y_{n+1} = \sin(c x_n) - \cos(d y_n)
+$$
+
 ## 项目结构 / Structure
 
 ```
