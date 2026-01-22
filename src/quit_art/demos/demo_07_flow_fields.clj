@@ -1,5 +1,7 @@
 (ns quit-art.demos.demo-07-flow-fields
   "Demo 07: Advanced Flow Fields - Complex flow field visualization with color gradients"
+  (:require [quil.middleware])
+  
   (:require [quil.core :as q]))
 
 (defn setup
