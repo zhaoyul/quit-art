@@ -18,7 +18,7 @@
 
 (defn draw []
   (q/with-translation [(/ (q/width) 2) (/ (q/height) 2)]
-    (q/with-rotation [q/pi]
+    (q/with-rotation [q/PI]
       (loop [times 3000000
              point [1.1 1.0]]
         (when (> times 1)
