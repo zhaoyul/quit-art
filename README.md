@@ -176,6 +176,9 @@ clj -M -m quit-art.demos.gen-art.01-cross-with-circle
 | 29 | Spiral Sphere | [29_spiral_sphere.clj](src/quit_art/demos/gen_art/29_spiral_sphere.clj) |
 | 30 | Random Clicked Circles | [30_random_clicked_circles.clj](src/quit_art/demos/gen_art/30_random_clicked_circles.clj) |
 | 31 | OO Circles | [31_oo_circles.clj](src/quit_art/demos/gen_art/31_oo_circles.clj) |
+| 32 | Sierpinski Triangle | [32_sierpinski_triangle.clj](src/quit_art/demos/gen_art/32_sierpinski_triangle.clj) |
+| 33 | Peter de Jong Attractor | [33_peter_de_jong.clj](src/quit_art/demos/gen_art/33_peter_de_jong.clj) |
+| 34 | Mandelbrot Set | [34_mandelbrot_set.clj](src/quit_art/demos/gen_art/34_mandelbrot_set.clj) |
 
 ## 项目结构 / Structure
 
