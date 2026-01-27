@@ -41,7 +41,7 @@ clj
 clj
 ```
 
-REPL 启动后会自动加载 demo-01~08，你可以看到可用的演示列表。运行任意演示:
+REPL 启动后会自动加载 demo-01~10，你可以看到可用的演示列表。运行任意演示:
 
 ```clojure
 ;; 查看所有演示
@@ -60,6 +60,8 @@ REPL 启动后会自动加载 demo-01~08，你可以看到可用的演示列表�
 ;; 生成艺术 (Tyler Hobbs 风格)
 (demo05/generative-lines)
 (demo06/subdivisions)
+(demo09/watercolor)
+(demo10/brush-calligraphy)
 ```
 
 ### 直接运行单个演示
@@ -120,6 +122,18 @@ clj -M -m quit-art.demos.demo-01-basic-shapes
 - **技术**: 碰撞检测、圆形增长、有机布局
 - **灵感**: 细胞结构、泡沫、自然界的空间利用
 
+### Demo 09: 水彩算法 (Watercolor Algorithm)
+- **复杂度**: ⭐⭐⭐⭐⭐
+- **概念**: 多边形递归变形、低透明度叠加、软边缘晕染
+- **技术**: 高斯分布位移、分形边缘、图层堆叠、纸张纹理噪声
+- **灵感**: Tyler Hobbs 的水彩算法讲解
+
+### Demo 10: 毛笔字湿笔 (Brush Calligraphy - Wet Ink)
+- **复杂度**: ⭐⭐⭐⭐⭐
+- **概念**: 笔触路径、压力曲线、湿笔晕染
+- **技术**: 多边形高斯变形、低透明度叠加、点击生成笔画
+- **灵感**: 水彩叠色与书法笔触融合
+
 ---
 
 | 演示 | 描述 | 复杂度 | 特点 |
@@ -132,6 +146,8 @@ clj -M -m quit-art.demos.demo-01-basic-shapes
 | demo-06 | 递归空间细分 | ⭐⭐⭐⭐ | 递归、空间分割、蒙德里安 |
 | demo-07 | 高级流场可视化 | ⭐⭐⭐⭐⭐ | 多层噪声、复杂系统 |
 | demo-08 | 圆形填充算法 | ⭐⭐⭐⭐⭐ | 空间填充、碰撞检测 |
+| demo-09 | 水彩算法 | ⭐⭐⭐⭐⭐ | 高斯变形、低透明度叠加 |
+| demo-10 | 毛笔字湿笔 | ⭐⭐⭐⭐⭐ | 笔触路径、湿笔晕染 |
 
 ## 更多例子 / More Examples
 
@@ -221,6 +237,8 @@ quit-art/
             ├── demo_06_subdivisions.clj      # 递归细分
             ├── demo_07_flow_fields.clj       # 高级流场
             ├── demo_08_circle_packing.clj    # 圆形填充
+            ├── demo_09_watercolor.clj        # 水彩算法
+            ├── demo_10_brush_calligraphy.clj # 毛笔字湿笔
             └── gen_art/                      # Quil 示例（31 个）
                 ├── 01_cross_with_circle.clj
                 ├── 02_growing_circle.clj

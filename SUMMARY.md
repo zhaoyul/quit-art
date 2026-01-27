@@ -2,9 +2,9 @@
 
 ## 项目概述 / Project Overview
 
-这是一个完整的 Clojure/Quil 生成艺术项目，从基础到高级循序渐进，包含 8 个核心演示与 31 个 Quil Generative Art 示例。项目受 Tyler Hobbs 等生成艺术家启发，展示了如何使用代码创作视觉艺术。
+这是一个完整的 Clojure/Quil 生成艺术项目，从基础到高级循序渐进，包含 10 个核心演示与 31 个 Quil Generative Art 示例。项目受 Tyler Hobbs 等生成艺术家启发，展示了如何使用代码创作视觉艺术。
 
-This is a complete Clojure/Quil generative art project with 8 core demos plus 31 Quil Generative Art examples, inspired by Tyler Hobbs and other generative artists.
+This is a complete Clojure/Quil generative art project with 10 core demos plus 31 Quil Generative Art examples, inspired by Tyler Hobbs and other generative artists.
 
 ## 技术栈 / Tech Stack
 
@@ -31,6 +31,8 @@ All demos are REPL-friendly and support live coding.
 - 流场可视化 (Flow Fields)
 - 递归空间分割 (Recursive Space Partitioning)
 - 圆形填充算法 (Circle Packing)
+- 水彩多边形变形 (Watercolor Polygon Deformation)
+- 毛笔湿笔笔触 (Brush Calligraphy Strokes)
 
 ### 4. 双语文档
 中英文双语文档，包括详细的技术说明和艺术概念解释。
@@ -55,6 +57,8 @@ Comprehensive bilingual documentation (Chinese/English).
 | 06 | Subdivisions | ⭐⭐⭐⭐ | 静态 | 递归算法、空间分割 |
 | 07 | Flow Fields | ⭐⭐⭐⭐⭐ | 动画 | 多层噪声、复杂流场 |
 | 08 | Circle Packing | ⭐⭐⭐⭐⭐ | 动画 | 碰撞检测、增长算法 |
+| 09 | Watercolor Algorithm | ⭐⭐⭐⭐⭐ | 静态 | 高斯变形、低透明度叠加 |
+| 10 | Brush Calligraphy | ⭐⭐⭐⭐⭐ | 交互 | 点击生成湿笔笔画 |
 
 另外还包含 31 个 Quil Generative Art 示例，位于 `src/quit_art/demos/gen_art/`。
 
@@ -70,7 +74,7 @@ quit-art/
 │   └── user.clj                  # REPL 辅助工具
 └── src/
     └── quit_art/
-        └── demos/                # 8 个演示
+        └── demos/                # 10 个演示
             ├── demo_01_basic_shapes.clj
             ├── demo_02_colors_patterns.clj
             ├── demo_03_animation.clj
@@ -79,6 +83,8 @@ quit-art/
             ├── demo_06_subdivisions.clj
             ├── demo_07_flow_fields.clj
             ├── demo_08_circle_packing.clj
+            ├── demo_09_watercolor.clj
+            ├── demo_10_brush_calligraphy.clj
             └── gen_art/           # 31 个 Quil 示例
                 ├── 01_cross_with_circle.clj
                 ├── 02_growing_circle.clj
@@ -114,7 +120,7 @@ clj
 3. 尝试修改和组合不同的技术
 
 ### 高级创作 (Advanced)
-1. 研究 demo-05 到 demo-08 的算法
+1. 研究 demo-05 到 demo-10 的算法
 2. 创作自己的生成艺术作品
 3. 探索 3D、着色器等高级特性
 
